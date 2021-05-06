@@ -1,0 +1,149 @@
+{
+    "a_galaxy_workflow": "true", 
+    "format-version": "0.1", 
+    "name": "TheOvertaker_submit2", 
+    "steps": {
+        "1": {
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CNA_INPUT"
+                }
+            ], 
+            "uuid": "cce96452-d5cc-4d3a-84b2-ec9dca69297d", 
+            "user_outputs": [], 
+            "tool_id": null, 
+            "outputs": [], 
+            "tool_version": null, 
+            "annotation": "", 
+            "input_connections": {}, 
+            "tool_errors": null, 
+            "position": {
+                "top": 262.5, 
+                "left": 217
+            }, 
+            "tool_state": "{\"name\": \"CNA_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 1, 
+            "name": "Input dataset"
+        }, 
+        "0": {
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "VCF_INPUT"
+                }
+            ], 
+            "uuid": "0a13a8c2-8aec-4969-8379-873c37f09858", 
+            "user_outputs": [], 
+            "tool_id": null, 
+            "outputs": [], 
+            "tool_version": null, 
+            "annotation": "", 
+            "input_connections": {}, 
+            "tool_errors": null, 
+            "position": {
+                "top": 119.5, 
+                "left": 300
+            }, 
+            "tool_state": "{\"name\": \"VCF_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 0, 
+            "name": "Input dataset"
+        }, 
+        "3": {
+            "tool_id": "smc_het_eval", 
+            "uuid": "b9232f22-2014-463f-bd3c-10bebc9207c8", 
+            "user_outputs": [], 
+            "tool_version": "0.1.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "outfile"
+                }
+            ], 
+            "post_job_actions": {}, 
+            "annotation": "", 
+            "input_connections": {
+                "proportion|predfile": {
+                    "output_name": "proportions", 
+                    "id": 2
+                }, 
+                "cellularity|predfile": {
+                    "output_name": "cellularity", 
+                    "id": 2
+                }, 
+                "cluster_assignment|predfile": {
+                    "output_name": "assignments", 
+                    "id": 2
+                }, 
+                "population|predfile": {
+                    "output_name": "no_clusters", 
+                    "id": 2
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 199.5, 
+                "left": 836.5
+            }, 
+            "tool_state": "{\"cocluster_assignment\": \"{\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__page__\": 0, \"approx\": \"{\\\"enable\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__rerun_remap_job_id__\": null, \"proportion\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"sample\": \"\\\"/opt/galaxy/data/Tumour3/Tumour3\\\"\", \"cellularity\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"cluster_assignment\": \"{\\\"predfile\\\": null, \\\"phylogeny\\\": {\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"population\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 3, 
+            "name": "SMC-Het Evaluator"
+        }, 
+        "2": {
+            "tool_id": "cise", 
+            "uuid": "3e2af220-3277-4180-987b-82590163f7bf", 
+            "user_outputs": [], 
+            "tool_version": "1.0.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "cellularity"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "no_clusters"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "proportions"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "assignments"
+                }
+            ], 
+            "post_job_actions": {}, 
+            "annotation": "", 
+            "input_connections": {
+                "input_vcf": {
+                    "output_name": "output", 
+                    "id": 0
+                }, 
+                "input_bat": {
+                    "output_name": "output", 
+                    "id": 1
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 262.5, 
+                "left": 554
+            }, 
+            "tool_state": "{\"input_bat\": \"null\", \"__page__\": 0, \"__rerun_remap_job_id__\": null, \"input_vcf\": \"null\", \"sample_number\": \"\\\"2\\\"\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 2, 
+            "name": "cise"
+        }
+    }, 
+    "annotation": "", 
+    "uuid": "f707257c-1bd9-40ab-a087-034fc674693d"
+}
